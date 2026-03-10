@@ -1,0 +1,289 @@
+/* CSS RESET & BASE */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* GRID NOTES */
+note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+  align-items: start;
+}
+
+note-item {
+  display: block;
+}
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* APP BAR */
+app-bar {
+  display: block;
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* NOTE FORM */
+note-form {
+  display: block;
+  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  padding: 24px;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.08);
+}
+
+note-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+note-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+note-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+note-form input,
+note-form textarea {
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  background-color: #ffffff;
+}
+
+note-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+note-form input:focus,
+note-form textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+note-form .error {
+  font-size: 0.75rem;
+  color: #dc2626;
+  min-height: 14px;
+}
+
+note-form button {
+  background: #fbbc04;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+note-form button:hover {
+  background: #f9ab00;
+}
+
+note-form button:disabled {
+  background: #c7d2fe;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* NOTE LIST */
+note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+  align-items: start;
+}
+
+/*  NOTE ITEM (CARD) */
+note-item {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+note-item h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+note-item p {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+note-item .date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+note-item .badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+note-item .badge.active {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+note-item .badge.archived {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.note-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #202124;
+}
+
+.note-card p {
+  font-size: 14px;
+  color: #5f6368;
+}
+
+/*tanggal*/
+.date {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #e60000;
+}
+
+.archive-btn {
+  background-color: #ffd43b;
+  color: #333;
+}
+
+.archive-btn:hover {
+  background-color: #ffc107;
+}
+
+/* RESPONSIVE TOUCH */
+@media (max-width: 600px) {
+  app-bar {
+    text-align: center;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
